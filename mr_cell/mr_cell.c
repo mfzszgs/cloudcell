@@ -1,26 +1,22 @@
 /*
- * ctrl_cell.c
+ * mr_cell.c
  *
  *  Created on: Oct 31, 2015
  *      Author: wing
  */
 
 #include "contiki.h"
-#include "mysock.h"
 
 #include <stdio.h> /* For printf() */
-#include "mysock.h"
 /*---------------------------------------------------------------------------*/
-PROCESS(ctrl_cell, "ctrl_cell");
-AUTOSTART_PROCESSES(&ctrl_cell);
+PROCESS(mr_cell, "mr_cell");
+AUTOSTART_PROCESSES(&mr_cell);
 /*---------------------------------------------------------------------------*/
-void handle(char* string, int size) {
-	printf("GET");
-}
-PROCESS_THREAD( ctrl_cell, ev, data) {
+PROCESS_THREAD( mr_cell, ev, data) {
 	PROCESS_BEGIN();
 
-	serv_sock(8081, handle );
+	printf("Hello, world\n");
+    exit(0);
 
 	PROCESS_END();
 }

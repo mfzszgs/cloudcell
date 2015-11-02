@@ -17,7 +17,7 @@
  *
  * \param handle.
  */
-void serv_sock(unsigned short int port, void (*handle)(char* string, int size));
+void serv_sock(unsigned short int port, void (*handle)(int sockfd));
 
 /**
  * Create a server socket.
@@ -34,5 +34,16 @@ int cli_sock(char * ip, unsigned short int port);
  * Close the sockfd.
  */
 void cli_close(int sockfd);
+
+#include<stddef.h>
+#include <errno.h>
+
+size_t /* Write "n" bytes to a descriptor. */
+writen(int fd, const void *vptr, size_t n);
+
+size_t /* Read "n" bytes from a descriptor. */
+readn(int fd, void *vptr, size_t n);
+
+size_t readline(int fd, void *vptr, size_t maxlen);
 
 #endif /* MYSOCK_H_ */

@@ -1,0 +1,9 @@
+.classpath
+.metadata/
+RemoteSystemsTempFiles/
+symbols.c
+symbols.h
+*.native
+*.o
+.cproject
+.project
